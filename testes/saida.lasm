@@ -1,0 +1,22 @@
+[00000000h] 
+[00000004h] 
+[00000008h] 
+
+mov strControl, [0000000Ch]
+int 00000000h, strControl
+
+int [00000000h], bufferInt
+
+mov strControl, [00000017h]
+int 00000000h, strControl
+
+int [00000004h], bufferInt
+
+mov intControl, [00000004h]
+add intControl, [00000000h]
+mov [00000008h], intControl
+
+convert strControl, [00000008h]
+concat strControl, [00000022h]
+int 00000000h, strControl
+
